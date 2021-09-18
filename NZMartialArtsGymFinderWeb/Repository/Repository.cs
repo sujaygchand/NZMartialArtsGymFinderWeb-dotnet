@@ -99,7 +99,7 @@ namespace NZMartialArtsGymFinderWeb.Repository
 			return response.StatusCode == HttpStatusCode.NoContent;
 		}
 
-		private async Task<HttpResponseMessage> SendApiRequest(HttpClient client, HttpRequestMessage request)
+		protected async Task<HttpResponseMessage> SendApiRequest(HttpClient client, HttpRequestMessage request)
 		{
 			if (client == null)
 				return null;
