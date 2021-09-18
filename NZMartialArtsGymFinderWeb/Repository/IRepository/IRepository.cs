@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace NZMartialArtsGymFinderWeb.Repository.IRepository
@@ -12,5 +13,6 @@ namespace NZMartialArtsGymFinderWeb.Repository.IRepository
 		Task<bool> CreateAsync(string url, T objToCreate, string token);
 		Task<bool> UpdateAsync(string url, T objToUpdate, string token);
 		Task<bool> DeleteAsync(string url, int id, string token);
+		public void AuthenticateBearerToken(ref HttpClient client, string token);
 	}
 }
