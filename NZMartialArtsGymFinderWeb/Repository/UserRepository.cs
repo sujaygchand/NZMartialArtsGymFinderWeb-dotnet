@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 
 namespace NZMartialArtsGymFinderWeb.Repository
 {
-	public class AccountRepository : Repository<User>, IAccountRepository
+	public class UserRepository : Repository<User>, IUserRepository
 	{
-		public AccountRepository(IHttpClientFactory clientFactory) : base(clientFactory)
+		public UserRepository(IHttpClientFactory clientFactory) : base(clientFactory)
 		{
 
 		}

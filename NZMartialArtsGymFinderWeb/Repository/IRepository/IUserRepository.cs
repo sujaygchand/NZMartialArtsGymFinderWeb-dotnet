@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NZMartialArtsGymFinderWeb.Repository.IRepository
 {
-	public interface IAccountRepository : IRepository<User>
+	public interface IUserRepository : IRepository<User>
 	{
 		Task<User> LoginAsync(string url, User user);
 		Task<bool> RegisterAsync(string url, User userToCreate);
