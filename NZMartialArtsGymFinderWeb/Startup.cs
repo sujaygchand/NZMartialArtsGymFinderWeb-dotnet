@@ -9,6 +9,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NZMartialArtsGymFinderWeb.Repository;
+using NZMartialArtsGymFinderWeb.Repository.IRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,7 +41,11 @@ namespace NZMartialArtsGymFinderWeb
 					options.SlidingExpiration = true;
 				});
 
+			services.AddScoped<IRegionRepository, RegionRepository>();
+			services.AddScoped<IGymRepository, GymRepository>();
+			services.AddScoped<IMartialArtRepository, MartialArtRepository>();
 			services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
 			services.AddControllersWithViews();
 			services.AddRazorPages().AddRazorRuntimeCompilation();
 			services.AddHttpClient();
